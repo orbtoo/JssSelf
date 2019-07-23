@@ -8,9 +8,7 @@ save `Api_id` and `Api_hash` and copy to `config.ini`
 
 
 ## installation 
-1. you have install python3.6+.
-> if you have problem, go [Here - install python3.6+](http://ubuntuhandbook.org/index.php/2017/07/install-python-3-6-1-in-ubuntu-16-04-lts/)
-2. 
+1.
 ```
 git clone https://github.com/orbtoo/JssSelf.git
 ```
@@ -18,24 +16,22 @@ git clone https://github.com/orbtoo/JssSelf.git
 cd JssSelf
 ```
 ```
-sudo apt-get install redis-server
+chmod +x installer.sh
 ```
 ```
-sudo pip install -r requirements.txt
-##if don't work try: pip3, pip3.7, pip3.6
+./installer
+# after install
+## enter number ...
+## close server and open again 
 ```
 Finally:
 ```
-python bot.py
-## enter number ...
-## close server and open again 
-screen python bot.py
+screen python3.6 bot.py
 
-if you have problem try: python3, python3.7 , python3.6, ...
 ```
 
 ##### !!! if pyrogram have problems reinstalled !!!
-> `pip reinstall pyrogram`
+> `python3.6 -m pip reinstall pyrogram`
 
 
 ## BotHelps
