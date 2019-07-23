@@ -1,6 +1,6 @@
 from pyrogram import Client, Filters, MessageHandler
 from pyrogram.api import functions, types
-import redis, psutil, random, time, os, requests, configparser, re
+import redis, random, time, os, requests, configparser, re
 import jdatetime
 
 #BY JESUS
@@ -689,27 +689,6 @@ def jss_myid(client,message):
     change7d = url.json()[0]["percent_change_7d"]
     price = url.json()[0]["price_usd"]
     send =app.edit_message_text(text="**-{}-** \n__Price__ : `${}`\n__Change 1h__ : `{}%`\n__Change 24h__ : `{}%`\n__Change 7d__ : `{}%`".format(name,price,change1h,change24h,change7d),
-        chat_id=message.chat.id,
-        message_id=message.message_id,)
-    if r.get("autodel") == "on":
-        time.sleep(float(r.get("autodeltime")))
-        app.delete_messages(message.chat.id,[send.message_id])
-
-@app.on_message(Filters.regex("^([Ss]erver)$") , group=13)
-def jss_myid(client,message):
-    myid = message.from_user.id
-    if myid != me(app):return
-    disk_p = dict(psutil.disk_usage(__file__)._asdict())["percent"] ## disk
-    ram_p = dict(psutil.virtual_memory()._asdict())["percent"]  ## RAM
-    cpu_p = psutil.cpu_percent()
-    text = f"""
-Server System Info
-
-Used Disk : `{disk_p}%`
-Used Ram : `{ram_p}%`
-Used Cpu  : `{cpu_p}%`
-"""
-    send =app.edit_message_text(text=text,
         chat_id=message.chat.id,
         message_id=message.message_id,)
     if r.get("autodel") == "on":
