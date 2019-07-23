@@ -1,8 +1,6 @@
 from pyrogram import Client, Filters, MessageHandler
 from pyrogram.api import functions, types
 import redis, psutil, random, time, os, requests, configparser, re
-from lxml import html
-from ssh import ssh
 import jdatetime
 
 #BY JESUS
